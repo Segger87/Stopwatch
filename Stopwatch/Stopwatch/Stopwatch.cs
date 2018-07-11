@@ -5,18 +5,18 @@ namespace Stopwatch
 	class Stopwatch
 	{
 		public bool Enabled;
-		public DateTime StartTime;
-		public DateTime EndTime;
+		private DateTime _startTime;
+		private DateTime _endTime;
 
 		public void Start()
 		{
-			StartTime = DateTime.Now;
+			_startTime = DateTime.Now;
 			Enabled = true;
 		}
 
 		public void Stop()
 		{
-			EndTime = DateTime.Now;
+			_endTime = DateTime.Now;
 			Enabled = false;
 		}
 
@@ -24,8 +24,7 @@ namespace Stopwatch
 		{
 			get
 			{
-				var totalTime = StartTime - EndTime;
-				return totalTime;
+				return _endTime - _startTime;		
 			}
 		}
 	}
