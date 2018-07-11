@@ -36,6 +36,8 @@ namespace Stopwatch
 
 				switch (stopSw)
 				{
+					case "start":
+						throw new InvalidOperationException("Stopwatch is already running");
 					case "stop":
 						sw.Stop();
 						var elapsedTime = sw.TimeElapsed;
